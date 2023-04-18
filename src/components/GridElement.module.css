@@ -8,14 +8,15 @@
 }
 
 .pictureWrapper {
-  min-width: 240px;
-  min-height: 240px;
+  width: 240px;
+  height: 240px;
   margin: 40px;
 }
 
 .picture {
   width: 100%;
   height: auto;
+  max-height: 240px;
 }
 
 .naming {

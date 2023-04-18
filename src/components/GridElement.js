@@ -3,13 +3,16 @@ import styles from './GridElement.module.css';
 
 export const GridElement = ({ cardName, url }) => {
   const [info, setInfo] = useState({});
-  console.log('cardName:', cardName, info);
+
+const handleShowInfo = ()=>{
+  
+}
+
   useEffect(() => {
     async function takeInfo() {
       try {
         const response = await fetch(url);
         const data = await response.json();
-        //console.log(data);
         const profileInformation = {
           profile: {
             abilities: data.abilities.map(slot => slot.ability.name),
@@ -38,7 +41,7 @@ export const GridElement = ({ cardName, url }) => {
   }, []);
 
   return (
-    <div className={styles.gridElement}>
+    <div className={styles.gridElement} onClick={}>
       <div className={styles.pictureWrapper}>
         <img
           className={styles.picture}
