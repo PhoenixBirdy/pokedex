@@ -1,0 +1,34 @@
+.gridElement {
+  border-radius: 8px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fcfcfc;
+}
+
+.pictureWrapper {
+  min-width: 240px;
+  min-height: 240px;
+  margin: 40px;
+}
+
+.picture {
+  width: 100%;
+  height: auto;
+}
+
+.naming {
+  min-height: 80px;
+  background-color: #ff3e4e;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  color: #fcfcfc;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

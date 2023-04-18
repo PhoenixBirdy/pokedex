@@ -1,0 +1,27 @@
+.element {
+  font-size: 20px;
+  color: #fcfcfc;
+  letter-spacing: 0;
+  line-height: 25px;
+  font-weight: 600;
+  min-width: 54px;
+
+  position: relative;
+  cursor: pointer;
+}
+
+.element.clicked {
+  position: relative;
+}
+
+.element.clicked::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  border: 2px solid #fcfcfc;
+  border-radius: 5px;
+  cursor: auto;
+}

@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 150px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 320px);
+  grid-template-rows: repeat(3, 398px);
+
+  column-gap: 28px;
+  row-gap: 40px;
+}
