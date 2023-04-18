@@ -8,12 +8,12 @@ export const Navigation = ({ elements, onHandleActiveElement }) => {
       {elements.map(element => {
         return (
           <NavLink
+            key={element.id}
             to={element.to}
             className={styles.noLinkLine}
             exact={!element.id}
           >
             <NavigationElement
-              key={element.id}
               id={element.id}
               active={element.active}
               onHandleActiveElement={onHandleActiveElement}

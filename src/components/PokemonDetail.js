@@ -1,7 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import styles from './PokemonDetail.module.css';
-import { Info } from './Info';
 
 export const PokemonDetail = () => {
   const { name } = useParams();
@@ -15,7 +14,7 @@ export const PokemonDetail = () => {
           `https://pokeapi.co/api/v2/pokemon/${name}`
         );
         const data = await response.json();
-        console.log(data);
+
         const profileInformation = {
           profile: {
             abilities: data.abilities.map(slot => slot.ability.name),

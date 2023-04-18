@@ -64,7 +64,6 @@ export const Grid = () => {
         <Pagination
           page={pagination}
           onChangePage={number => {
-            console.log('new:', number);
             handleChangePage(number);
           }}
         />
