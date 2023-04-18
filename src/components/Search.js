@@ -3,15 +3,15 @@ import styles from './Search.module.css';
 import searchSrc from '../images/search_icon.png';
 import clearSrc from '../images/x_icon.png';
 
-export const Search = () => {
-  const [search, setSearch] = useState('');
+export const Search = ({ search, handleChangeSearch }) => {
+  //const [search, setSearch] = useState('');
 
   const handleClickClear = () => {
-    setSearch('');
+    handleChangeSearch('');
   };
 
   const handleChange = event => {
-    setSearch(event.target.value);
+    handleChangeSearch(event.target.value);
   };
 
   return (

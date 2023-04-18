@@ -2,13 +2,19 @@ import { useEffect, useState, useRef } from 'react';
 import styles from './Grid.module.css';
 import { GridElement } from './GridElement';
 import { Pagination } from './Pagination';
+import { Search } from './Search';
 
 const RANGE = 12;
 
 export const Grid = () => {
+  const [search, setSearch] = useState('');
   const [pagination, setPagination] = useState(1);
   const [cards, setCards] = useState([]);
   const inStockRef = useRef([]);
+  const toRender =
+    search.length >= 2
+      ? cards.filter(item => item.name.includes(search))
+      : cards.slice((pagination - 1) * RANGE, pagination * RANGE);
 
   useEffect(() => {
     async function fetchData() {
@@ -38,21 +44,31 @@ export const Grid = () => {
     setPagination(number);
   };
 
-  return (
-    <div className={styles.container}>
-      <div className={styles.grid}>
-        {cards.slice((pagination - 1) * RANGE, pagination * RANGE).map(card => (
-          <GridElement key={card.name} cardName={card.name} url={card.url} />
-        ))}
-      </div>
+  const handleChangeSearch = string => {
+    setSearch(string);
+  };
 
-      <Pagination
-        page={pagination}
-        onChangePage={number => {
-          console.log('new:', number);
-          handleChangePage(number);
-        }}
+  return (
+    <>
+      <Search
+        search={search}
+        handleChangeSearch={string => handleChangeSearch(string)}
       />
-    </div>
+      <div className={styles.container}>
+        <div className={styles.grid}>
+          {toRender.map(card => (
+            <GridElement key={card.name} cardName={card.name} url={card.url} />
+          ))}
+        </div>
+
+        <Pagination
+          page={pagination}
+          onChangePage={number => {
+            console.log('new:', number);
+            handleChangePage(number);
+          }}
+        />
+      </div>
+    </>
   );
 };

@@ -4,9 +4,9 @@ import styles from './GridElement.module.css';
 export const GridElement = ({ cardName, url }) => {
   const [info, setInfo] = useState({});
 
-const handleShowInfo = ()=>{
-  
-}
+  const handleShowInfo = () => {
+    console.log('showInfo');
+  };
 
   useEffect(() => {
     async function takeInfo() {
@@ -41,7 +41,7 @@ const handleShowInfo = ()=>{
   }, []);
 
   return (
-    <div className={styles.gridElement} onClick={}>
+    <div className={styles.gridElement} onClick={handleShowInfo}>
       <div className={styles.pictureWrapper}>
         <img
           className={styles.picture}
