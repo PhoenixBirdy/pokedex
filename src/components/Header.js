@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Logo } from './Logo';
 import styles from './Header.module.css';
 import { Navigation } from './Navigation';
+import { NavLink } from 'react-router-dom';
 
 const counterId = (initialId = 0) => {
   let counter = initialId;
@@ -11,8 +12,8 @@ const id = counterId();
 
 export const Header = () => {
   const [elements, setElements] = useState([
-    { name: 'O nás', id: id(), active: false },
-    { name: 'Pokémoni', id: id(), active: true },
+    { name: 'O nás', id: id(), active: false, to: '/' },
+    { name: 'Pokémoni', id: id(), active: true, to: '/pokemons' },
   ]);
   console.log(elements);
 

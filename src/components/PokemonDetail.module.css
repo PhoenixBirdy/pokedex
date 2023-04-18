@@ -1,0 +1,31 @@
+.container {
+  border: 1px solid red;
+  width: 80%;
+  height: 648px;
+  margin: 0 auto;
+  position: relative;
+  background: #fcfcfc;
+}
+
+.pictureWrapper {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  bottom: 40px;
+  border: 2px solid #e8e8e8;
+  border-radius: 8px;
+}
+
+.picture {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+}
+
+.naming {
+  font-size: 40px;
+  line-height: 49px;
+  color: #ff3e4e;
+  padding: 49px 80px 106px;
+  text-align: center;
+}
